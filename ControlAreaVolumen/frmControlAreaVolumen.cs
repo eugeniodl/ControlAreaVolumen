@@ -27,5 +27,22 @@ namespace ControlAreaVolumen
             txtR.Text += "\r\nÁREA: " + area.ToString("0.00");
             txtR.Text += "\r\nVOLUMEN: " + volumen.ToString("0.00");
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtAltura.Clear();
+            txtDiametro.Clear();
+            txtR.Clear();
+            txtAltura.Focus();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("¿Está seguro de salir?", "Medidas",
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+            if(r == DialogResult.Yes)
+                this.Close();
+        }
     }
 }
